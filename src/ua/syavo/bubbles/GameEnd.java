@@ -48,15 +48,24 @@ public class GameEnd {
 			g.fillRect(GamePanel.Width / 2 - buttonWidth / 2, GamePanel.Height / 2 - buttonHeight / 2, buttonWidth,
 					buttonHeight);
 
-			g.setStroke(new BasicStroke(1));
+			g.setStroke(new BasicStroke(2));
 
 			g.setColor(color1);
 			g.setFont(new Font("Consolas", Font.BOLD, 40));
 			long length = (int) g.getFontMetrics().getStringBounds(s, g).getWidth();
-			String S1="Зіграєш ще ?=)";
+			String S1="Do you want to play the game?=)";
 			g.drawString(s, (int) (GamePanel.Width / 2 - length / 2), (int) (GamePanel.Height / 2 + buttonHeight / 4));
+			g.setFont(new Font("Consolas", Font.BOLD, 20));
 			long length1 = (int) g.getFontMetrics().getStringBounds(S1, g).getWidth();
 			g.drawString(S1, (int) (GamePanel.Width / 2 - length1 / 2), (int) (GamePanel.Height / 2 + buttonHeight / 4)-100);
+
+			g.drawString("High Score: " + Score.SCORE.getHighScore(), 10,  30);
+
+			String S2="Your Score: " + Score.SCORE.scoreOfGame;
+			long length2 = (int) g.getFontMetrics().getStringBounds(S2, g).getWidth();
+			g.drawString(S2, (int) (GamePanel.Width / 2 - length2 / 2), (int) (GamePanel.Height / 2 + buttonHeight / 4)-150);
+
+
 			
 		}
 

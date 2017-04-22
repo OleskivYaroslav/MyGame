@@ -23,7 +23,7 @@ public class Wave {
 		waveTimer = 0;
 		waveTimerDiff = 0;
 
-		waveText = "Хвиля - ";
+		waveText = "Wave - ";
 
 	}
 

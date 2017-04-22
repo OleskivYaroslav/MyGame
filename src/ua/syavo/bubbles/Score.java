@@ -22,13 +22,10 @@ public class Score {
     void tryReadingElseCreate() throws IOException {
 
         try {
-
             BufferedReader bf = new BufferedReader(new FileReader(file));
             HighScore = Integer.parseInt(bf.readLine());
-
         } catch (FileNotFoundException e) {
             file.createNewFile();
-
         }catch (EOFException e){
             HighScore = 0;
         }
@@ -41,13 +38,8 @@ public class Score {
         if (scoreOfGame > HighScore) {
             HighScore = scoreOfGame;
             FileWriter myFile = new FileWriter(file);
-            //BufferedWriter buff = new BufferedWriter(myFile);
-            //buff.write(scoreOfGame);
-            myFile.write("smitty " + scoreOfGame);
-            //buff.close();
+            myFile.write(scoreOfGame + "");
             myFile.close();
-
-
         }
     }
 
