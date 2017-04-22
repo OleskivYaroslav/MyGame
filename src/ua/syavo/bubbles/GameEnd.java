@@ -7,14 +7,14 @@ import java.awt.Graphics2D;
 
 public class GameEnd {
 	
-	// Fields
+
 		private int buttonWidth;
 		private int buttonHeight;
 		private Color color1;
 		private String s;
 		private int transp = 0;
 
-		// Constructor
+
 		public GameEnd() {
 			buttonHeight = 60;
 			buttonWidth = 120;
@@ -23,7 +23,7 @@ public class GameEnd {
 			s = "Yes";
 		}
 
-		// Function
+
 		public void update() {
 			if (GamePanel.mouseX > GamePanel.Width / 2 - buttonWidth / 2
 					&& GamePanel.mouseX < GamePanel.Width / 2 + buttonWidth / 2
@@ -53,7 +53,7 @@ public class GameEnd {
 			g.setColor(color1);
 			g.setFont(new Font("Consolas", Font.BOLD, 40));
 			long length = (int) g.getFontMetrics().getStringBounds(s, g).getWidth();
-			String S1="Ти програв? Зіграй ще :)";
+			String S1="Зіграєш ще ?=)";
 			g.drawString(s, (int) (GamePanel.Width / 2 - length / 2), (int) (GamePanel.Height / 2 + buttonHeight / 4));
 			long length1 = (int) g.getFontMetrics().getStringBounds(S1, g).getWidth();
 			g.drawString(S1, (int) (GamePanel.Width / 2 - length1 / 2), (int) (GamePanel.Height / 2 + buttonHeight / 4)-100);

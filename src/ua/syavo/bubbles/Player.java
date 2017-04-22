@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class Player {
 
-	// Fields
+
 
 	private double x;
 	private double y;
@@ -17,7 +17,7 @@ public class Player {
 	private int speed;
 
 	private Color color1;
-	// private Color color2;
+
 
 	public static boolean up;
 
@@ -26,7 +26,7 @@ public class Player {
 	public static boolean right;
 	public static boolean isFire;
 
-	// Constructor
+
 	public Player() {
 		x = GamePanel.Width / 2;
 		y = GamePanel.Height / 2;
@@ -47,7 +47,7 @@ public class Player {
 		isFire = false;
 	}
 
-	// Functions
+
 
 	public void update() {
 

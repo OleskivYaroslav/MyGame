@@ -5,15 +5,18 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.util.*;
 
 import javax.swing.JPanel;
 
 public class GamePanel extends JPanel implements Runnable {
 
-	// Field
+
 	public static int Width = 600;
 	public static int Height = 600;
+
+
 
 	public static int mouseX;
 	public static int mouseY;
@@ -76,7 +79,11 @@ public class GamePanel extends JPanel implements Runnable {
 		bullets = new ArrayList<Bullet>();
 		enemies = new ArrayList<Enemy>();
 		wave = new Wave();
-		menu = new Menu();
+		try {
+			menu = new Menu();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		endGame = new GameEnd();
 
 		Toolkit kit = Toolkit.getDefaultToolkit();
@@ -138,17 +145,17 @@ public class GamePanel extends JPanel implements Runnable {
 
 	public void gameUpdate() {
 
-		// Background update
+
 		backGround.update();
-		// player update
+
 		player.update();
 
-		// Bullets update
+
 		for (int i = 0; i < bullets.size(); i++) {
 			bullets.get(i).update();
 		}
 
-		// Enemies update
+
 		for (int i = 0; i < enemies.size(); i++) {
 			enemies.get(i).update();
 		}
@@ -171,6 +178,7 @@ public class GamePanel extends JPanel implements Runnable {
 					j--;
 					if (en.remove()) {
 						enemies.remove(i);
+						Score.SCORE.scoreOfGame++;
 						i--;
 						break;
 					}
@@ -195,6 +203,12 @@ public class GamePanel extends JPanel implements Runnable {
 				player.hit();
 				if(player.remove()){
 					GamePanel.state = GamePanel.States.END;
+					try {
+						Score.SCORE.updatingScore();
+
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
 				}
 				
 				if (e.remove()) {
@@ -210,13 +224,15 @@ public class GamePanel extends JPanel implements Runnable {
 
 	}
 
+
+
 	public void gameRender() {
-		// Background draw
+
 		backGround.draw(g);
-		// player draw
+
 		player.draw(g);
 
-		// Bullets draw
+
 		for (int i = 0; i < bullets.size(); i++) {
 			bullets.get(i).draw(g);
 			boolean remove = bullets.get(i).remove();
@@ -226,15 +242,12 @@ public class GamePanel extends JPanel implements Runnable {
 			}
 		}
 
-		// Enemies draw
 		for (int i = 0; i < enemies.size(); i++) {
 			enemies.get(i).draw(g);
 		}
-		// Wave draw
 		if (wave.showWave()) {
 			wave.draw(g);
 		}
-		// Lives draw
 		player.drawLives(g);
 	}
 

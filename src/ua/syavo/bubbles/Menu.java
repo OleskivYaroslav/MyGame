@@ -1,29 +1,35 @@
 package ua.syavo.bubbles;
 
+import javafx.scene.shape.Path;
+
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
+import java.io.*;
 
-public class Menu {
+import static java.lang.String.*;
 
-	// Fields
+public class Menu extends IOException{
+
+
 	private int buttonWidth;
 	private int buttonHeight;
 	private Color color1;
 	private String s;
 	private int transp = 0;
 
-	// Constructor
-	public Menu() {
+	public Menu() throws IOException {
 		buttonHeight = 60;
 		buttonWidth = 120;
-
+		Score.SCORE.tryReadingElseCreate();
 		color1 = Color.WHITE;
 		s = "PLAY!";
 	}
 
-	// Function
+
+
+
 	public void update() {
 		if (GamePanel.mouseX > GamePanel.Width / 2 - buttonWidth / 2
 				&& GamePanel.mouseX < GamePanel.Width / 2 + buttonWidth / 2
@@ -54,5 +60,9 @@ public class Menu {
 		g.setFont(new Font("Consolas", Font.BOLD, 40));
 		long length = (int) g.getFontMetrics().getStringBounds(s, g).getWidth();
 		g.drawString(s, (int) (GamePanel.Width / 2 - length / 2), (int) (GamePanel.Height / 2 + buttonHeight / 4));
+
+        String S1="High Score: " + Score.SCORE.getHighScore();
+        long length1 = (int) g.getFontMetrics().getStringBounds(S1, g).getWidth();
+        g.drawString(S1, (int) (GamePanel.Width / 2 - length1 / 2), (int) (GamePanel.Height / 2 + buttonHeight / 4)-200);
 	}
 }

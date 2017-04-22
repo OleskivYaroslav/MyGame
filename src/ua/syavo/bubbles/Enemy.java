@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class Enemy {
 
-	// Fields
+
 	private double x;
 	private double y;
 	private int r;
@@ -17,7 +17,7 @@ public class Enemy {
 
 	private int type;
 	private int rank;
-	// Constructor
+
 
 	public Enemy(int type, int rank) {
 		this.type = type;
@@ -66,7 +66,6 @@ public class Enemy {
 		this.y = y;
 	}
 
-	// Functions
 	public boolean remove() {
 		if (health <= 0) {
 			return true;

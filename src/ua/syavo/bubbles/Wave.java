@@ -5,7 +5,7 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 
 public class Wave {
-	// Field
+
 	private int waveNumber;
 	private long waveTimer;
 	private long waveDelay;
@@ -15,7 +15,6 @@ public class Wave {
 
 	private String waveText;
 
-	// Constructors
 	public Wave() {
 		waveNumber = 1;
 		waveMultiplayer = 5;
@@ -28,7 +27,7 @@ public class Wave {
 
 	}
 
-	// Functions
+
 	public void createEnemies() {
 		int enemyCount = waveNumber * waveMultiplayer;
 

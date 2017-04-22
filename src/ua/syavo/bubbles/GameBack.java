@@ -6,12 +6,11 @@ public class GameBack {
 
 	private Color color;
 
-	// Constructor
+
 	public GameBack() {
 		color = Color.BLUE;
 	}
 
-	// Functions
 
 	public void update() {
 

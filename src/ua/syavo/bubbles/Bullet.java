@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class Bullet {
 
-	// Fields
+
 	private double x;
 	private double y;
 	private double bulletDX;
@@ -19,7 +19,7 @@ public class Bullet {
 
 	private Color color1;
 
-	// Constructors
+
 	public Bullet() {
 		x = GamePanel.player.getX();
 		y = GamePanel.player.getY();
@@ -36,7 +36,7 @@ public class Bullet {
 		color1 = Color.WHITE;
 	}
 
-	// Functions
+
 
 	public boolean remove() {
 		if (y < 0)
