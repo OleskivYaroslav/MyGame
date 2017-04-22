@@ -31,6 +31,7 @@ public class GameEnd {
 					&& GamePanel.mouseY < GamePanel.Height / 2 + buttonHeight / 2) {
 				transp = 60;
 				if (GamePanel.leftMouse) {
+                    Score.SCORE.scoreOfGame=0;
 					GamePanel.state = GamePanel.States.PLAY;
 				}
 			} else {

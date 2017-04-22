@@ -147,8 +147,8 @@ public class GamePanel extends JPanel implements Runnable {
 
 
 		backGround.update();
-
 		player.update();
+
 
 
 		for (int i = 0; i < bullets.size(); i++) {
