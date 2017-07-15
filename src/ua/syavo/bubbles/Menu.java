@@ -1,14 +1,10 @@
 package ua.syavo.bubbles;
 
-import javafx.scene.shape.Path;
-
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.io.*;
-
-import static java.lang.String.*;
 
 public class Menu extends IOException{
 
@@ -26,9 +22,6 @@ public class Menu extends IOException{
 		color1 = Color.WHITE;
 		s = "PLAY!";
 	}
-
-
-
 
 	public void update() {
 		if (GamePanel.mouseX > GamePanel.Width / 2 - buttonWidth / 2

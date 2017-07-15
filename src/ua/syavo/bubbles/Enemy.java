@@ -46,24 +46,12 @@ public class Enemy {
 		return r;
 	}
 
-	public void setR(int r) {
-		this.r = r;
-	}
-
 	public double getX() {
 		return x;
 	}
 
-	public void setX(double x) {
-		this.x = x;
-	}
-
 	public double getY() {
 		return y;
-	}
-
-	public void setY(double y) {
-		this.y = y;
 	}
 
 	public boolean remove() {
@@ -91,7 +79,6 @@ public class Enemy {
 	}
 
 	public void draw(Graphics2D g) {
-
 		g.setColor(color1);
 		g.fillOval((int) x - r, (int) y - r, 2 * r, 2 * r);
 		g.setStroke(new BasicStroke(3));

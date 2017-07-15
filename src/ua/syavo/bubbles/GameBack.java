@@ -12,9 +12,7 @@ public class GameBack {
 	}
 
 
-	public void update() {
-
-	}
+	public void update() {}
 
 	public void draw(Graphics2D g) {
 		g.setColor(color);

@@ -10,9 +10,9 @@ public class Bullet {
 	private double bulletDX;
 	private double bulletDY;
 
-	private double distX;
-	private double distY;
-	private double dist;
+	private double distanceX;
+	private double distanceY;
+	private double distance;
 	private int r;
 
 	private int speed;
@@ -27,11 +27,11 @@ public class Bullet {
 
 		speed = 10;
 
-		distX = GamePanel.mouseX - x;
-		distY = GamePanel.mouseY - y;
-		dist = Math.sqrt(distX * distX + distY * distY);
-		bulletDX = distX / dist*speed;
-		bulletDY = distY / dist *speed;
+		distanceX = GamePanel.mouseX - x;
+		distanceY = GamePanel.mouseY - y;
+		distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+		bulletDX = distanceX / distance*speed;
+		bulletDY = distanceY / distance *speed;
 
 		color1 = Color.WHITE;
 	}
@@ -49,24 +49,12 @@ public class Bullet {
 		return r;
 	}
 
-	public void setR(int r) {
-		this.r = r;
-	}
-
 	public double getX() {
 		return x;
 	}
 
-	public void setX(double x) {
-		this.x = x;
-	}
-
 	public double getY() {
 		return y;
-	}
-
-	public void setY(double y) {
-		this.y = y;
 	}
 
 	public void update() {

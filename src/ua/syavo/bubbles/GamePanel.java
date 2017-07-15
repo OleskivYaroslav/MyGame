@@ -45,7 +45,7 @@ public class GamePanel extends JPanel implements Runnable {
 	public static Wave wave;
 	public static Menu menu;
 	public static GameEnd endGame;
-	// Constructor
+
 
 	public GamePanel() {
 		super();
@@ -145,21 +145,27 @@ public class GamePanel extends JPanel implements Runnable {
 
 	public void gameUpdate() {
 
-
 		backGround.update();
 		player.update();
-
 
 
 		for (int i = 0; i < bullets.size(); i++) {
 			bullets.get(i).update();
 		}
 
-
 		for (int i = 0; i < enemies.size(); i++) {
 			enemies.get(i).update();
 		}
-		// Bullets-enemies collide
+
+		bulletsEnemiesCollide();
+		playerEnemyCollides();
+
+		wave.update();
+
+	}
+
+
+	private void bulletsEnemiesCollide(){
 		for (int i = 0; i < enemies.size(); i++) {
 			Enemy en = enemies.get(i);
 			double ex = en.getX();
@@ -187,7 +193,9 @@ public class GamePanel extends JPanel implements Runnable {
 			}
 
 		}
-		// Player-enemy collides
+	}
+
+	private void playerEnemyCollides(){
 		for (int i = 0; i < enemies.size(); i++) {
 			Enemy e = enemies.get(i);
 			double ex = e.getX();
@@ -210,20 +218,14 @@ public class GamePanel extends JPanel implements Runnable {
 						e1.printStackTrace();
 					}
 				}
-				
 				if (e.remove()) {
 					enemies.remove(i);
 					i--;
 					break;
 				}
 			}
-
 		}
-		// Wave update
-		wave.update();
-
 	}
-
 
 
 	public void gameRender() {

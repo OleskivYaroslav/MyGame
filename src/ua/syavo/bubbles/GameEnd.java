@@ -6,14 +6,11 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 
 public class GameEnd {
-	
-
 		private int buttonWidth;
 		private int buttonHeight;
 		private Color color1;
 		private String s;
 		private int transp = 0;
-
 
 		public GameEnd() {
 			buttonHeight = 60;
@@ -66,8 +63,5 @@ public class GameEnd {
 			long length2 = (int) g.getFontMetrics().getStringBounds(S2, g).getWidth();
 			g.drawString(S2, (int) (GamePanel.Width / 2 - length2 / 2), (int) (GamePanel.Height / 2 + buttonHeight / 4)-150);
 
-
-			
 		}
-
 }

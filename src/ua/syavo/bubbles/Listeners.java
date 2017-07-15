@@ -7,16 +7,16 @@ public class Listeners implements KeyListener, MouseListener, MouseMotionListene
 	public void keyPressed(KeyEvent e) {
 
 		int key = e.getKeyCode();
-		if (key == KeyEvent.VK_W) {
+		if (key == KeyEvent.VK_W || key == KeyEvent.VK_UP) {
 			Player.up = true;
 		}
-		if (key == KeyEvent.VK_S) {
+		if (key == KeyEvent.VK_S || key == KeyEvent.VK_DOWN) {
 			Player.down = true;
 		}
-		if (key == KeyEvent.VK_A) {
+		if (key == KeyEvent.VK_A || key == KeyEvent.VK_LEFT) {
 			Player.left = true;
 		}
-		if (key == KeyEvent.VK_D) {
+		if (key == KeyEvent.VK_D || key == KeyEvent.VK_RIGHT) {
 			Player.right = true;
 		}
 		if (key == KeyEvent.VK_SPACE) {
@@ -31,16 +31,16 @@ public class Listeners implements KeyListener, MouseListener, MouseMotionListene
 	public void keyReleased(KeyEvent e) {
 
 		int key = e.getKeyCode();
-		if (key == KeyEvent.VK_W) {
+		if (key == KeyEvent.VK_W || key == KeyEvent.VK_UP) {
 			Player.up = false;
 		}
-		if (key == KeyEvent.VK_S) {
+		if (key == KeyEvent.VK_S || key == KeyEvent.VK_DOWN) {
 			Player.down = false;
 		}
-		if (key == KeyEvent.VK_A) {
+		if (key == KeyEvent.VK_A || key == KeyEvent.VK_LEFT) {
 			Player.left = false;
 		}
-		if (key == KeyEvent.VK_D) {
+		if (key == KeyEvent.VK_D || key == KeyEvent.VK_RIGHT) {
 			Player.right = false;
 		}
 		if (key == KeyEvent.VK_SPACE) {
@@ -65,19 +65,16 @@ public class Listeners implements KeyListener, MouseListener, MouseMotionListene
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-
 	}
 
 	public void mousePressed(MouseEvent e) {
